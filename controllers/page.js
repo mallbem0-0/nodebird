@@ -1,5 +1,3 @@
-const express = require("express");
-
 // 프로필 페이지를 렌더링하는 함수 저의
 exports.renderProfile = (req, res) => {
     // 'profile' 템플릿 렌더링, 'title' 변수 설정
@@ -7,7 +5,7 @@ exports.renderProfile = (req, res) => {
 };
 
 // 회원 가입 페이지를 렌더링하는 함수 정의
-express.renderJoin = (req, res) => {
+exports.renderJoin = (req, res) => {
     // 'join' 템플릿 렌더링, 'title' 변수 설정
     res.render('join', { title: '회원 가입 - NodeBird' });
 };

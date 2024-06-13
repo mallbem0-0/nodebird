@@ -36,6 +36,7 @@ app.use(session({
 }));
 
 app.use('/', pageRouter); // '/' 경로로 들어오는 요청을 pageRouter로 처리하도록 설정
+
 // 요청한 라우터가 없을 경우 404 에러를 처리하는 미들웨어 추가
 app.use((req, res, next) => {
     const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
@@ -56,7 +57,3 @@ app.listen(app.get('port'), () => {
     console.log(app.get('port'), '번 포트에서 대기 중')
 });
 
-// 설정된 포트에서 서버를 시작하고 대기
-app.listen(app.get('port'), () => {
-    console.log(app.get('port'), '번 포트에서 대기 중')
-});
